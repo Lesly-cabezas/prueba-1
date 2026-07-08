@@ -11,3 +11,18 @@ No se conoce con precisión qué variables de la mezcla influyen en mayor medida
 Los métodos tradicionales de control dependen de ensayos de laboratorio que requieren tiempo para obtener resultados finales.
 Existe incertidumbre en la relación entre los componentes del concreto y su resistencia final.
 No siempre se emplean herramientas estadísticas o predictivas para optimizar el diseño de mezclas de concreto.
+
+Variable dependiente:
+
+- Resistencia a compresión del concreto
+
+Variables independientes:
+
+- Cemento
+- Agua
+- Agregado fino
+- Agregado grueso
+- Ceniza volante
+- Escoria
+- Superplastificante
+- Edad del concreto
