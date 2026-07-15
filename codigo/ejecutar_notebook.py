@@ -5,6 +5,7 @@ import sys
 
 import nbformat
 from nbclient import NotebookClient
+from playwright.sync_api import sync_playwright
 
 project_dir = Path(__file__).resolve().parent.parent
 results_dir = project_dir / 'resultados'
@@ -27,17 +28,28 @@ client.execute()
 nbformat.write(nb, out_notebook)
 print('Notebook ejecutado guardado en:', out_notebook)
 
-cmd = [
+cmd_html = [
     sys.executable,
     '-m', 'jupyter', 'nbconvert',
-    '--to', 'pdf',
+    '--to', 'html',
     '--output-dir', str(reports_dir),
-    '--output', out_pdf.stem,
+    '--output', out_html.name,
     str(out_notebook),
 ]
-result = subprocess.run(cmd, cwd=project_dir, capture_output=True, text=True)
-print('STDOUT:', result.stdout)
-print('STDERR:', result.stderr)
-if result.returncode != 0:
-    raise SystemExit(result.returncode)
+result_html = subprocess.run(cmd_html, cwd=project_dir, capture_output=True, text=True)
+print('HTML export STDOUT:', result_html.stdout)
+print('HTML export STDERR:', result_html.stderr)
+if result_html.returncode != 0:
+    raise SystemExit(result_html.returncode)
 print('HTML guardado en:', out_html)
+
+try:
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+        page.goto(out_html.resolve().as_uri(), wait_until='networkidle')
+        page.pdf(path=str(out_pdf), format='A4', print_background=True)
+        browser.close()
+    print('PDF guardado en:', out_pdf)
+except Exception as exc:
+    print(f'No se pudo generar PDF desde HTML: {exc}')
