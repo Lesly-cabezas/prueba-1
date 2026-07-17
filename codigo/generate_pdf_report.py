@@ -23,7 +23,8 @@ def main():
         '## 11. Benchmark preliminar reproducible': [
             'comparacion_modelos_r2.png',
             'comparacion_modelos_rmse.png'
-        ]
+        ],
+        '## 5. Distribuciones': ['agua_cemento_vs_resistencia.png']
     }
 
     nb = nbformat.read(str(nb_in), as_version=4)

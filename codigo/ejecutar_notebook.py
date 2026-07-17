@@ -14,7 +14,8 @@ reports_dir = results_dir / 'reportes'
 images_dir.mkdir(parents=True, exist_ok=True)
 reports_dir.mkdir(parents=True, exist_ok=True)
 
-os.environ['MPLBACKEND'] = 'Agg'
+# Usar el backend por defecto de Jupyter para que los gráficos se capten en las salidas del notebook.
+# os.environ['MPLBACKEND'] = 'Agg'
 
 notebook_path = project_dir / 'T2_EDA_Concreto_Grupo03.ipynb'
 out_notebook = results_dir / 'T2_EDA_Concreto_Grupo03_ejecutado.ipynb'
