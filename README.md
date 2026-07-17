@@ -42,3 +42,10 @@ Variables independientes:
 | 14/07/2026 | ChatGPT + scikit-learn | Proponer modelos y esquemas de validación | Plan de regresión lineal, Random Forest, SVR y MLP con KFold y GroupKFold | Se documentaron métricas preliminares y criterios de comparación |
 | 16/07/2026 | ChatGPT + Python | Generar el reporte final en HTML/PDF y copiarlo al directorio raíz | Creación de `README_report.md`, `T2_EDA_Concreto_Grupo03.html` y `T2_EDA_Concreto_Grupo03.pdf` | Se verificó la existencia de los archivos y la conversión exitosa |
 | 16/07/2026 | ChatGPT | Actualizar la bitácora y registros finales en los documentos nuevos | Registro de uso AI en `README_report.md` y `README.md` con cambios finales | Se validó la presencia de la bitácora actualizada en ambos documentos |
+ 
+## Reportes
+
+- **HTML:** [T2_EDA_Concreto_Grupo03.html](T2_EDA_Concreto_Grupo03.html)
+- **PDF:** [T2_EDA_Concreto_Grupo03.pdf](T2_EDA_Concreto_Grupo03.pdf)
+
+También están disponibles en `resultados/reportes/`.
